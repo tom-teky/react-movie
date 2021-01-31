@@ -16,7 +16,7 @@ class App extends Component {
   }
 
   UNSAFE_componentWillMount() {
-    this.initMovies();
+    this.initMovies()
   }
 
   initMovies(){
@@ -25,10 +25,15 @@ class App extends Component {
     }.bind(this))
   }
   render() {
+    const renderVideoList = () => {
+      if(this.state.movieList.length>=5){
+        return <VideoList movieList={this.state.movieList} />
+      }
+    }
     return (
       <div className="container">
         <SearchBar />
-        <VideoList movieList={this.state.movieList} />
+        {renderVideoList()}
         <VideoDetail title={this.state.currentMovie.title} description={this.state.currentMovie.overview}/>
       </div>
     )

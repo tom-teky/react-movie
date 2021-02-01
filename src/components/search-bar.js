@@ -8,8 +8,10 @@ class SearchBar extends Component {
     
     render(){
         return (
-            <div>
-                <input type="text" onChange={this.handleChange.bind(this)} placeholder={this.placeHolder} />
+            <div className="row">
+                <div className="col-md-8">
+                    <input type="text" className="form-control input-lg" onChange={this.handleChange.bind(this)} placeholder={this.placeHolder} />
+                </div>
             </div>
         )
     }
